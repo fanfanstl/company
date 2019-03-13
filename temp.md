@@ -18,3 +18,6 @@ EK443138435HK
 
 
 
+数据库查询：select * from spider_sku where sourceItemVersion ='456'\G;
+
+select * from spider_item where sourceItemVersion ='456'\G;
