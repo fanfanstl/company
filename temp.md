@@ -36,3 +36,52 @@ select * from spider_item where sourceItemVersion ='456'\G;
 
 查看链接评估
 
+
+
+
+
+设计:
+
+sizeMap = {
+
+'M':97,
+
+'L',99
+
+}
+
+
+
+colorToSizeToPriceMap ={
+
+colorId:{
+
+sizeId:value,
+
+price:value,
+
+marketprice:value,
+
+isOutOfStock:value
+
+},...
+
+}
+
+
+
+
+
+## 3.14
+
+```
+tmallbasem天猫基类
+tmall_ifam天猫例子
+taobaobasenew淘宝基类
+poptaobaoyeshi淘宝例子
+```
+
+
+
+
+
