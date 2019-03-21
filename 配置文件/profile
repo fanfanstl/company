@@ -1,0 +1,39 @@
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ "$PS1" ]; then
+  if [ "$BASH" ] && [ "$BASH" != "/bin/sh" ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+    fi
+  else
+    if [ "`id -u`" -eq 0 ]; then
+      PS1='# '
+    else
+      PS1='$ '
+    fi
+  fi
+fi
+
+# The default umask is now handled by pam_umask.
+# See pam_umask(8) and /etc/login.defs.
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+alias root="sudo -iu root"
+alias work="sudo -iu work"
+alias ubuntu="sudo -iu ubuntu"
+alias spiderenv="source /home/work/env/spider/bin/activate"
+alias spiderdb="mysql -h online-spider.c9qvc7ixh1mw.rds.cn-north-1.amazonaws.com.cn -P 3306  -u bbt_online_r -pbonbon1234 bbt_spider"
+alias importdb="mysql -h online-master-item.c9qvc7ixh1mw.rds.cn-north-1.amazonaws.com.cn -P 3396 -u bbt_online_r -pbonbon1234 bbt"
+alias workdir="cd /home/work/src/spider-python"
+alias testdb="mysql -h bbt-item.c9qvc7ixh1mw.rds.cn-north-1.amazonaws.com.cn -uroot -pfsf989r8wr bbt"
+alias spiderlog="tail -f /home/work/src/spider-python/goods/log/currentLog.txt"
