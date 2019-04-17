@@ -24,6 +24,24 @@
 	
 ```
 
+# 调用接口相关函数
+
+```
+spider中接口的调用：
+    $client = new BBT_Service_Client();
+    $ret = $client->call("spider", "addExpressQueryTask",	['userName'=>'fan','sourceWebsite'=>"http",'taskType'=>'spider']);
+
+uiitem中Uiitem_Spider::getShoppingConf()，-------->通过BBT_srverice_client请求默认配置
+
+词表中数据读取：
+$wt = new BBT_WordTable();
+$waliConfig = $wt->getKey('trade',"zhongguo");
+
+
+
+
+```
+
 
 
 # 配置文件描述：
@@ -154,6 +172,24 @@ redis、mysql
 用户的使用角度：
 
 因此，从以上角度来说，我认为我帮你app在经济上具有可行性。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
